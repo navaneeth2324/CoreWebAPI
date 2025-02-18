@@ -74,7 +74,8 @@ This is a .NET 8 web API project for managing employees in an organization. It p
 4. Run the following commands in the Package Manager Console to apply migrations:
 ```
 update-Database
-```5. Build and run the application.
+```
+5. Build and run the application.
 
 ## License
 
