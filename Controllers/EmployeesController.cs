@@ -25,6 +25,8 @@ namespace EmployeeAdminPortal.Controllers
             logger.LogInformation("Getting all employees");
             var employees=_context.Employees.ToList();
             logger.LogInformation($"Employees fetched: {JsonSerializer.Serialize(employees)}");
+            //Adding this exception to test the ExceptionHandlerMiddleware
+            throw new Exception("Some Error Occured");
             return Ok(employees);
         }
         [HttpPost]

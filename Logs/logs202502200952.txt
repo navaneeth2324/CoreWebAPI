@@ -1,0 +1,14 @@
+2025-02-20 09:52:28.578 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7186/api/Employees - application/json 98
+2025-02-20 09:52:28.592 +05:30 [INF] Executing endpoint 'EmployeeAdminPortal.Controllers.EmployeesController.AddEmployee (EmployeeAdminPortal)'
+2025-02-20 09:52:28.596 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddEmployee(EmployeeAdminPortal.Models.Entities.AddEmployeeDTO) on controller EmployeeAdminPortal.Controllers.EmployeesController (EmployeeAdminPortal).
+2025-02-20 09:52:28.632 +05:30 [INF] Adding new Employee
+2025-02-20 09:52:28.806 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Employees] ([Id], [Email], [Name], [Phone], [Salary])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-02-20 09:52:28.816 +05:30 [INF] Added New Employee {"Id":"89ce3271-7d70-4972-bf37-08dd51662fd0","Name":"Puneeth","Email":"punith@gmail.com","Phone":"7845784596","Salary":12540}
+2025-02-20 09:52:28.818 +05:30 [INF] Executing OkObjectResult, writing value of type 'EmployeeAdminPortal.Models.Entities.Employee'.
+2025-02-20 09:52:28.820 +05:30 [INF] Executed action EmployeeAdminPortal.Controllers.EmployeesController.AddEmployee (EmployeeAdminPortal) in 222.4522ms
+2025-02-20 09:52:28.823 +05:30 [INF] Executed endpoint 'EmployeeAdminPortal.Controllers.EmployeesController.AddEmployee (EmployeeAdminPortal)'
+2025-02-20 09:52:28.824 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7186/api/Employees - 200 null application/json; charset=utf-8 246.3757ms

@@ -1,0 +1,39 @@
+2025-02-20 09:49:00.541 +05:30 [INF] Now listening on: https://localhost:7186
+2025-02-20 09:49:00.608 +05:30 [INF] Now listening on: http://localhost:5129
+2025-02-20 09:49:00.728 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-20 09:49:00.730 +05:30 [INF] Hosting environment: Development
+2025-02-20 09:49:00.731 +05:30 [INF] Content root path: C:\Users\navne\Desktop\Interview Prep\Practise\EmployeeAdminPortal
+2025-02-20 09:49:01.707 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - null null
+2025-02-20 09:49:02.340 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 null text/html;charset=utf-8 640.4669ms
+2025-02-20 09:49:02.403 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - null null
+2025-02-20 09:49:02.403 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - null null
+2025-02-20 09:49:02.415 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13790 application/javascript; charset=utf-8 12.3954ms
+2025-02-20 09:49:02.487 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 null text/javascript; charset=UTF-8 83.2831ms
+2025-02-20 09:49:02.554 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - null null
+2025-02-20 09:49:02.571 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 17.2538ms
+2025-02-20 09:49:06.695 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/api/Employees - null null
+2025-02-20 09:49:06.722 +05:30 [INF] Executing endpoint 'EmployeeAdminPortal.Controllers.EmployeesController.GetAllEmployees (EmployeeAdminPortal)'
+2025-02-20 09:49:06.752 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllEmployees() on controller EmployeeAdminPortal.Controllers.EmployeesController (EmployeeAdminPortal).
+2025-02-20 09:49:06.925 +05:30 [INF] Getting all employees
+2025-02-20 09:49:07.511 +05:30 [WRN] No store type was specified for the decimal property 'Salary' on entity type 'Employee'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-02-20 09:49:08.264 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[Email], [e].[Name], [e].[Phone], [e].[Salary]
+FROM [Employees] AS [e]
+2025-02-20 09:49:08.352 +05:30 [INF] Employees fetched: [{"Id":"885e76c4-2c3f-477c-de09-08dd4fdd4f65","Name":"Vishal M","Email":"vishal24@gmail.com","Phone":"7946859796","Salary":58000.00},{"Id":"d7e799f8-0beb-488f-22ba-08dd4fdfb830","Name":"Navaneeth M","Email":"navneeth63@gmail.com","Phone":"6466542154","Salary":55000.00}]
+2025-02-20 09:49:08.360 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeAdminPortal.Models.Entities.Employee, EmployeeAdminPortal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-20 09:49:08.369 +05:30 [INF] Executed action EmployeeAdminPortal.Controllers.EmployeesController.GetAllEmployees (EmployeeAdminPortal) in 1611.1502ms
+2025-02-20 09:49:08.372 +05:30 [INF] Executed endpoint 'EmployeeAdminPortal.Controllers.EmployeesController.GetAllEmployees (EmployeeAdminPortal)'
+2025-02-20 09:49:08.385 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/api/Employees - 200 null application/json; charset=utf-8 1690.9058ms
+2025-02-20 09:49:22.175 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/api/Employees/d7e799f8-0beb-488f-22ba-08dd4fdfb830 - null null
+2025-02-20 09:49:22.181 +05:30 [INF] Executing endpoint 'EmployeeAdminPortal.Controllers.EmployeesController.GetEmployee (EmployeeAdminPortal)'
+2025-02-20 09:49:22.197 +05:30 [INF] Route matched with {action = "GetEmployee", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEmployee(System.Guid) on controller EmployeeAdminPortal.Controllers.EmployeesController (EmployeeAdminPortal).
+2025-02-20 09:49:22.217 +05:30 [INF] Fetching Employee by ID
+2025-02-20 09:49:22.398 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[Email], [e].[Name], [e].[Phone], [e].[Salary]
+FROM [Employees] AS [e]
+WHERE [e].[Id] = @__p_0
+2025-02-20 09:49:22.405 +05:30 [INF] Employee Fetched {"Id":"d7e799f8-0beb-488f-22ba-08dd4fdfb830","Name":"Navaneeth M","Email":"navneeth63@gmail.com","Phone":"6466542154","Salary":55000.00}
+2025-02-20 09:49:22.409 +05:30 [INF] Executing OkObjectResult, writing value of type 'EmployeeAdminPortal.Models.Entities.Employee'.
+2025-02-20 09:49:22.412 +05:30 [INF] Executed action EmployeeAdminPortal.Controllers.EmployeesController.GetEmployee (EmployeeAdminPortal) in 211.5839ms
+2025-02-20 09:49:22.414 +05:30 [INF] Executed endpoint 'EmployeeAdminPortal.Controllers.EmployeesController.GetEmployee (EmployeeAdminPortal)'
+2025-02-20 09:49:22.416 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/api/Employees/d7e799f8-0beb-488f-22ba-08dd4fdfb830 - 200 null application/json; charset=utf-8 241.734ms

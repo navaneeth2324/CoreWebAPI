@@ -1,0 +1,13 @@
+2025-02-20 10:25:07.619 +05:30 [INF] Now listening on: https://localhost:7186
+2025-02-20 10:25:07.668 +05:30 [INF] Now listening on: http://localhost:5129
+2025-02-20 10:25:07.766 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-20 10:25:07.768 +05:30 [INF] Hosting environment: Development
+2025-02-20 10:25:07.769 +05:30 [INF] Content root path: C:\Users\navne\Desktop\Interview Prep\Practise\EmployeeAdminPortal
+2025-02-20 10:25:08.014 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - null null
+2025-02-20 10:25:08.214 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 null text/html;charset=utf-8 194.5966ms
+2025-02-20 10:25:08.245 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - null null
+2025-02-20 10:25:08.259 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - null null
+2025-02-20 10:25:08.313 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13790 application/javascript; charset=utf-8 67.5492ms
+2025-02-20 10:25:08.386 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 null text/javascript; charset=UTF-8 126.3557ms
+2025-02-20 10:25:08.459 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - null null
+2025-02-20 10:25:08.508 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 48.8472ms
