@@ -30,6 +30,7 @@ namespace EmployeeAdminPortal.Controllers
         [HttpPost]
         public IActionResult AddEmployee(AddEmployeeDTO addEmployeeDTO)
         {
+            logger.LogInformation("Adding new Employee");
             var employee = new Employee
             {
                 Name = addEmployeeDTO.Name,
@@ -39,17 +40,20 @@ namespace EmployeeAdminPortal.Controllers
             };
             _context.Employees.Add(employee);
             _context.SaveChanges();
+            logger.LogInformation($"Added New Employee {JsonSerializer.Serialize(employee)}");
             return Ok(employee); 
         }
         [HttpGet]
         [Route("{id:guid}")]
         public IActionResult GetEmployee(Guid id)
         {
+            logger.LogInformation("Fetching Employee by ID");
             var employee = _context.Employees.Find(id);
             if (employee == null)
             {
                 return NotFound();
             }
+            logger.LogInformation($"Employee Fetched {JsonSerializer.Serialize(employee)}");
             return Ok(employee);
         }
 
@@ -57,6 +61,7 @@ namespace EmployeeAdminPortal.Controllers
         [Route("{id:guid}")]
         public IActionResult UpdateEmployee(Guid id, UpdateEmployeeDTO updateEmployeeDTO)
         {
+            logger.LogInformation("Updating Employee Details ");
             var employee = _context.Employees.Find(id);
             if (employee == null)
             {
@@ -67,6 +72,7 @@ namespace EmployeeAdminPortal.Controllers
             employee.Phone = updateEmployeeDTO.Phone;
             employee.Salary = updateEmployeeDTO.Salary;
             _context.SaveChanges();
+            logger.LogInformation($"Updated Employee Details {JsonSerializer.Serialize(employee)}");
             return Ok(employee);
         }
 
@@ -74,6 +80,7 @@ namespace EmployeeAdminPortal.Controllers
         [Route("{id:guid}")]
         public IActionResult DeleteEmployee(Guid id)
         {
+            logger.LogInformation("Deleting Employee");
             var employee = _context.Employees.Find(id);
             if (employee == null)
             {
@@ -81,6 +88,7 @@ namespace EmployeeAdminPortal.Controllers
             }
             _context.Employees.Remove(employee);
             _context.SaveChanges();
+            logger.LogInformation("Employee Deleted");
             return Ok();
         }
     }
