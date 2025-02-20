@@ -1,4 +1,5 @@
-﻿using EmployeeAdminPortal.Data;
+﻿using System.Text.Json;
+using EmployeeAdminPortal.Data;
 using EmployeeAdminPortal.Models.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,14 +12,19 @@ namespace EmployeeAdminPortal.Controllers
     public class EmployeesController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        public EmployeesController(ApplicationDbContext context)
+        private readonly ILogger<EmployeesController> logger;
+
+        public EmployeesController(ApplicationDbContext context,ILogger<EmployeesController> logger)
         {
             _context = context;
+            this.logger = logger;
         }
         [HttpGet]
         public IActionResult GetAllEmployees()
         {
-           var employees=_context.Employees.ToList();
+            logger.LogInformation("Getting all employees");
+            var employees=_context.Employees.ToList();
+            logger.LogInformation($"Employees fetched: {JsonSerializer.Serialize(employees)}");
             return Ok(employees);
         }
         [HttpPost]
