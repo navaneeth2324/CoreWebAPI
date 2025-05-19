@@ -11,3 +11,34 @@
 2025-02-20 10:25:08.386 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 null text/javascript; charset=UTF-8 126.3557ms
 2025-02-20 10:25:08.459 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - null null
 2025-02-20 10:25:08.508 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 48.8472ms
+2025-02-20 10:25:12.627 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/api/Employees - null null
+2025-02-20 10:25:12.642 +05:30 [INF] Executing endpoint 'EmployeeAdminPortal.Controllers.EmployeesController.GetAllEmployees (EmployeeAdminPortal)'
+2025-02-20 10:25:12.664 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllEmployees() on controller EmployeeAdminPortal.Controllers.EmployeesController (EmployeeAdminPortal).
+2025-02-20 10:25:12.775 +05:30 [INF] Getting all employees
+2025-02-20 10:25:13.243 +05:30 [WRN] No store type was specified for the decimal property 'Salary' on entity type 'Employee'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-02-20 10:25:13.787 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[Email], [e].[Name], [e].[Phone], [e].[Salary]
+FROM [Employees] AS [e]
+2025-02-20 10:25:13.866 +05:30 [INF] Employees fetched: [{"Id":"885e76c4-2c3f-477c-de09-08dd4fdd4f65","Name":"Vishal M","Email":"vishal24@gmail.com","Phone":"7946859796","Salary":58000.00},{"Id":"d7e799f8-0beb-488f-22ba-08dd4fdfb830","Name":"Navaneeth M","Email":"navneeth63@gmail.com","Phone":"6466542154","Salary":55000.00},{"Id":"89ce3271-7d70-4972-bf37-08dd51662fd0","Name":"Puneeth","Email":"punith@gmail.com","Phone":"7845784596","Salary":12540.00}]
+2025-02-20 10:25:13.875 +05:30 [INF] Executed action EmployeeAdminPortal.Controllers.EmployeesController.GetAllEmployees (EmployeeAdminPortal) in 1203.9451ms
+2025-02-20 10:25:13.883 +05:30 [INF] Executed endpoint 'EmployeeAdminPortal.Controllers.EmployeesController.GetAllEmployees (EmployeeAdminPortal)'
+2025-02-20 10:25:13.886 +05:30 [ERR] 3138c117-ec1d-43dc-9495-cddc74736945 : Some Error Occured
+System.Exception: Some Error Occured
+   at EmployeeAdminPortal.Controllers.EmployeesController.GetAllEmployees() in C:\Users\navne\Desktop\Interview Prep\Practise\EmployeeAdminPortal\Controllers\EmployeesController.cs:line 29
+   at lambda_method2(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at EmployeeAdminPortal.Middlewares.ExceptionHandlerMiddleware.Invoke(HttpContext context) in C:\Users\navne\Desktop\Interview Prep\Practise\EmployeeAdminPortal\Middlewares\ExceptionHandlerMiddleware.cs:line 20
+2025-02-20 10:25:13.980 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/api/Employees - 500 null application/json; charset=utf-8 1353.0879ms

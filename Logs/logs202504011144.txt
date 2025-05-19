@@ -1,0 +1,34 @@
+2025-04-01 11:44:10.843 +05:30 [INF] Now listening on: https://localhost:7186
+2025-04-01 11:44:10.937 +05:30 [INF] Now listening on: http://localhost:5129
+2025-04-01 11:44:11.153 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-01 11:44:11.261 +05:30 [INF] Hosting environment: Development
+2025-04-01 11:44:11.262 +05:30 [INF] Content root path: C:\Users\navne\Desktop\Interview Prep\Practise\EmployeeAdminPortal
+2025-04-01 11:44:23.248 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/swagger/index.html - null null
+2025-04-01 11:44:23.962 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/swagger/index.html - 200 null text/html;charset=utf-8 730.0824ms
+2025-04-01 11:44:24.032 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/swagger/swagger-ui.css - null null
+2025-04-01 11:44:24.034 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/swagger/swagger-ui-bundle.js - null null
+2025-04-01 11:44:24.034 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/swagger/swagger-ui-standalone-preset.js - null null
+2025-04-01 11:44:24.056 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-01 11:44:24.057 +05:30 [INF] The file /swagger-ui.css was not modified
+2025-04-01 11:44:24.057 +05:30 [INF] The file /swagger-ui-bundle.js was not modified
+2025-04-01 11:44:24.075 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/swagger/swagger-ui-bundle.js - 304 null text/javascript 40.7075ms
+2025-04-01 11:44:24.072 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/_vs/browserLink - null null
+2025-04-01 11:44:24.075 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/swagger/swagger-ui.css - 304 null text/css 42.8691ms
+2025-04-01 11:44:24.092 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/_framework/aspnetcore-browser-refresh.js - 200 13790 application/javascript; charset=utf-8 36.0083ms
+2025-04-01 11:44:24.059 +05:30 [INF] The file /swagger-ui-standalone-preset.js was not modified
+2025-04-01 11:44:24.141 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/swagger/swagger-ui-standalone-preset.js - 304 null text/javascript 106.8413ms
+2025-04-01 11:44:24.567 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/_vs/browserLink - 200 null text/javascript; charset=UTF-8 494.8664ms
+2025-04-01 11:44:24.822 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - null null
+2025-04-01 11:44:24.864 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/swagger/favicon-32x32.png - null null
+2025-04-01 11:44:25.558 +05:30 [INF] The file /favicon-32x32.png was not modified
+2025-04-01 11:44:25.559 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/swagger/favicon-32x32.png - 304 null image/png 695.1406ms
+2025-04-01 11:44:25.572 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 750.0956ms
+2025-04-01 11:44:31.510 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/api/Employees - null null
+2025-04-01 11:44:31.540 +05:30 [INF] Executing endpoint 'EmployeeAdminPortal.Controllers.EmployeesController.GetAllEmployees (EmployeeAdminPortal)'
+2025-04-01 11:44:31.601 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllEmployees() on controller EmployeeAdminPortal.Controllers.EmployeesController (EmployeeAdminPortal).
+2025-04-01 11:44:32.313 +05:30 [INF] Getting all employees
+2025-04-01 11:44:33.361 +05:30 [WRN] No store type was specified for the decimal property 'Salary' on entity type 'Employee'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-04-01 11:44:35.332 +05:30 [INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[Email], [e].[Name], [e].[Phone], [e].[Salary]
+FROM [Employees] AS [e]
+2025-04-01 11:44:35.510 +05:30 [INF] Employees fetched: [{"Id":"885e76c4-2c3f-477c-de09-08dd4fdd4f65","Name":"Vishal M","Email":"vishal24@gmail.com","Phone":"7946859796","Salary":58000.00},{"Id":"d7e799f8-0beb-488f-22ba-08dd4fdfb830","Name":"Navaneeth M","Email":"navneeth63@gmail.com","Phone":"6466542154","Salary":55000.00},{"Id":"89ce3271-7d70-4972-bf37-08dd51662fd0","Name":"Puneeth","Email":"punith@gmail.com","Phone":"7845784596","Salary":12540.00}]

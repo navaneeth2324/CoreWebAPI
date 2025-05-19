@@ -1,0 +1,19 @@
+2025-05-19 11:24:13.611 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7186/api/Employees - null null
+2025-05-19 11:24:13.667 +05:30 [INF] Executing endpoint 'EmployeeAdminPortal.Controllers.EmployeesController.GetAllEmployees (EmployeeAdminPortal)'
+2025-05-19 11:24:13.726 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllEmployees() on controller EmployeeAdminPortal.Controllers.EmployeesController (EmployeeAdminPortal).
+2025-05-19 11:24:14.068 +05:30 [INF] Getting all employees
+2025-05-19 11:24:14.699 +05:30 [WRN] No store type was specified for the decimal property 'Salary' on entity type 'Employee'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-19 11:24:15.812 +05:30 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[Email], [e].[Name], [e].[Phone], [e].[Salary]
+FROM [Employees] AS [e]
+2025-05-19 11:24:15.916 +05:30 [INF] Employees fetched from database and cached.
+2025-05-19 11:24:15.935 +05:30 [INF] Employees fetched: [{"Id":"885e76c4-2c3f-477c-de09-08dd4fdd4f65","Name":"Vishal M","Email":"vishal24@gmail.com","Phone":"7946859796","Salary":58000.00},{"Id":"d7e799f8-0beb-488f-22ba-08dd4fdfb830","Name":"Navaneeth M","Email":"navneeth63@gmail.com","Phone":"6466542154","Salary":55000.00},{"Id":"89ce3271-7d70-4972-bf37-08dd51662fd0","Name":"Puneeth","Email":"punith@gmail.com","Phone":"7845784596","Salary":12540.00}]
+2025-05-19 11:24:15.944 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeAdminPortal.Models.Entities.Employee, EmployeeAdminPortal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-19 11:24:15.954 +05:30 [INF] Executed action EmployeeAdminPortal.Controllers.EmployeesController.GetAllEmployees (EmployeeAdminPortal) in 2215.5292ms
+2025-05-19 11:24:15.956 +05:30 [INF] Executed endpoint 'EmployeeAdminPortal.Controllers.EmployeesController.GetAllEmployees (EmployeeAdminPortal)'
+2025-05-19 11:24:15.973 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7186/api/Employees - 200 null application/json; charset=utf-8 2366.097ms
+2025-05-19 11:24:39.220 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7186/api/Employees
+ - null null
+2025-05-19 11:24:39.238 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7186/api/Employees
+ - 404 0 null 19.6893ms
+2025-05-19 11:24:39.243 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7186/api/Employees%0A, Response status code: 404

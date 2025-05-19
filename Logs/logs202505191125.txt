@@ -1,0 +1,20 @@
+2025-05-19 11:25:09.917 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7186/api/Employees - null null
+2025-05-19 11:25:09.923 +05:30 [INF] Executing endpoint 'EmployeeAdminPortal.Controllers.EmployeesController.GetAllEmployees (EmployeeAdminPortal)'
+2025-05-19 11:25:09.933 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllEmployees() on controller EmployeeAdminPortal.Controllers.EmployeesController (EmployeeAdminPortal).
+2025-05-19 11:25:09.946 +05:30 [INF] Getting all employees
+2025-05-19 11:25:09.950 +05:30 [INF] Employees fetched from cache.
+2025-05-19 11:25:09.951 +05:30 [INF] Employees fetched: [{"Id":"885e76c4-2c3f-477c-de09-08dd4fdd4f65","Name":"Vishal M","Email":"vishal24@gmail.com","Phone":"7946859796","Salary":58000.00},{"Id":"d7e799f8-0beb-488f-22ba-08dd4fdfb830","Name":"Navaneeth M","Email":"navneeth63@gmail.com","Phone":"6466542154","Salary":55000.00},{"Id":"89ce3271-7d70-4972-bf37-08dd51662fd0","Name":"Puneeth","Email":"punith@gmail.com","Phone":"7845784596","Salary":12540.00}]
+2025-05-19 11:25:09.954 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeAdminPortal.Models.Entities.Employee, EmployeeAdminPortal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-19 11:25:09.959 +05:30 [INF] Executed action EmployeeAdminPortal.Controllers.EmployeesController.GetAllEmployees (EmployeeAdminPortal) in 14.2303ms
+2025-05-19 11:25:09.962 +05:30 [INF] Executed endpoint 'EmployeeAdminPortal.Controllers.EmployeesController.GetAllEmployees (EmployeeAdminPortal)'
+2025-05-19 11:25:09.966 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7186/api/Employees - 200 null application/json; charset=utf-8 50.7182ms
+2025-05-19 11:25:15.218 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7186/api/Employees - null null
+2025-05-19 11:25:15.221 +05:30 [INF] Executing endpoint 'EmployeeAdminPortal.Controllers.EmployeesController.GetAllEmployees (EmployeeAdminPortal)'
+2025-05-19 11:25:15.223 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllEmployees() on controller EmployeeAdminPortal.Controllers.EmployeesController (EmployeeAdminPortal).
+2025-05-19 11:25:15.229 +05:30 [INF] Getting all employees
+2025-05-19 11:25:15.231 +05:30 [INF] Employees fetched from cache.
+2025-05-19 11:25:15.232 +05:30 [INF] Employees fetched: [{"Id":"885e76c4-2c3f-477c-de09-08dd4fdd4f65","Name":"Vishal M","Email":"vishal24@gmail.com","Phone":"7946859796","Salary":58000.00},{"Id":"d7e799f8-0beb-488f-22ba-08dd4fdfb830","Name":"Navaneeth M","Email":"navneeth63@gmail.com","Phone":"6466542154","Salary":55000.00},{"Id":"89ce3271-7d70-4972-bf37-08dd51662fd0","Name":"Puneeth","Email":"punith@gmail.com","Phone":"7845784596","Salary":12540.00}]
+2025-05-19 11:25:15.235 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeAdminPortal.Models.Entities.Employee, EmployeeAdminPortal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-19 11:25:15.238 +05:30 [INF] Executed action EmployeeAdminPortal.Controllers.EmployeesController.GetAllEmployees (EmployeeAdminPortal) in 12.429ms
+2025-05-19 11:25:15.240 +05:30 [INF] Executed endpoint 'EmployeeAdminPortal.Controllers.EmployeesController.GetAllEmployees (EmployeeAdminPortal)'
+2025-05-19 11:25:15.242 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7186/api/Employees - 200 null application/json; charset=utf-8 23.594ms

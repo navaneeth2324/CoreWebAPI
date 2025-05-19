@@ -1,9 +1,8 @@
 ﻿using System.Text.Json;
 using EmployeeAdminPortal.Data;
 using EmployeeAdminPortal.Models.Entities;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace EmployeeAdminPortal.Controllers
 {
@@ -13,20 +12,38 @@ namespace EmployeeAdminPortal.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly ILogger<EmployeesController> logger;
+        private readonly IMemoryCache _cache;
 
-        public EmployeesController(ApplicationDbContext context,ILogger<EmployeesController> logger)
+        public EmployeesController(ApplicationDbContext context,ILogger<EmployeesController> logger,IMemoryCache cache)
         {
             _context = context;
             this.logger = logger;
+            _cache = cache;
         }
         [HttpGet]
         public IActionResult GetAllEmployees()
         {
             logger.LogInformation("Getting all employees");
-            var employees=_context.Employees.ToList();
+
+            const string cacheKey = "all_employees";
+            if (!_cache.TryGetValue(cacheKey, out List<Employee> employees))
+            {
+                employees = _context.Employees.ToList();
+
+                var cacheEntryOptions = new MemoryCacheEntryOptions()
+                    .SetAbsoluteExpiration(TimeSpan.FromSeconds(60)) // Cache for 10 Seconds
+                    .SetSlidingExpiration(TimeSpan.FromMinutes(5)); // Cache for 5 minutes
+
+                _cache.Set(cacheKey, employees, cacheEntryOptions);
+
+                logger.LogInformation("Employees fetched from database and cached.");
+            }
+            else
+            {
+                logger.LogInformation("Employees fetched from cache.");
+            }
+
             logger.LogInformation($"Employees fetched: {JsonSerializer.Serialize(employees)}");
-            //Adding this exception to test the ExceptionHandlerMiddleware
-            throw new Exception("Some Error Occured");
             return Ok(employees);
         }
         [HttpPost]
@@ -42,6 +59,7 @@ namespace EmployeeAdminPortal.Controllers
             };
             _context.Employees.Add(employee);
             _context.SaveChanges();
+            _cache.Remove("all_employees"); // Invalidate the cache
             logger.LogInformation($"Added New Employee {JsonSerializer.Serialize(employee)}");
             return Ok(employee); 
         }
@@ -74,6 +92,7 @@ namespace EmployeeAdminPortal.Controllers
             employee.Phone = updateEmployeeDTO.Phone;
             employee.Salary = updateEmployeeDTO.Salary;
             _context.SaveChanges();
+            _cache.Remove("all_employees"); // Invalidate the cache
             logger.LogInformation($"Updated Employee Details {JsonSerializer.Serialize(employee)}");
             return Ok(employee);
         }
@@ -90,6 +109,7 @@ namespace EmployeeAdminPortal.Controllers
             }
             _context.Employees.Remove(employee);
             _context.SaveChanges();
+            _cache.Remove("all_employees"); // Invalidate the cache
             logger.LogInformation("Employee Deleted");
             return Ok();
         }
