@@ -23,7 +23,7 @@ namespace EmployeeAdminPortal.Controllers
         [HttpGet]
         public IActionResult GetAllEmployees()
         {
-            logger.LogInformation("Getting all employees");
+            logger.LogInformation("Fetching all employees");
 
             const string cacheKey = "all_employees";
             if (!_cache.TryGetValue(cacheKey, out List<Employee> employees))
