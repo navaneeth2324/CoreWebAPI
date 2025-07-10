@@ -28,7 +28,7 @@ namespace EmployeeAdminPortal.Middlewares
                 var error= new
                 {
                     ErrorId = errorid,
-                    ErrorMessage = "Something went wrong, Please try again later"
+                    ErrorMessage = "Something went wrong, Please try again"
                 };
                 await context.Response.WriteAsJsonAsync(error);
             }
